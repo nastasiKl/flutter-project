@@ -1,11 +1,16 @@
 # FoodHub
-
 FoodHub is a Flutter recipe discovery app for searching meals with [TheMealDB](https://www.themealdb.com/api.php), saving favorites, adding personal recipes with photos, and managing language/theme preferences.
 
 ## Screenshots
 <img width="335" height="838" alt="image" src="https://github.com/user-attachments/assets/19d699f2-4609-417d-a878-efb7d3bc4f75" />
 
 <img width="324" height="838" alt="image" src="https://github.com/user-attachments/assets/2444e9a5-6fd5-4bbf-b6f8-8baee170eaf0" />
+<img width="331" height="838" alt="image" src="https://github.com/user-attachments/assets/f18a1c8c-29be-470f-9488-6e9169064aa5" />
+<img width="326" height="832" alt="image" src="https://github.com/user-attachments/assets/26f79b80-ca7b-4731-bbec-7748b5793cd5" />
+<img width="335" height="845" alt="image" src="https://github.com/user-attachments/assets/2fc4920c-fe50-4bff-a692-cd085fbf5b2f" />
+<img width="323" height="838" alt="image" src="https://github.com/user-attachments/assets/21725827-4d6b-4527-8cd0-4deced02f164" />
+<img width="332" height="842" alt="image" src="https://github.com/user-attachments/assets/118c1256-3d96-4bad-b247-64f2a62b48d2" />
+<img width="330" height="843" alt="image" src="https://github.com/user-attachments/assets/ec51a430-158d-4a35-ae6d-0a7570bfb442" />
 
 
 ## Implemented Requirements
