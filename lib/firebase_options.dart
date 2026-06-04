@@ -20,20 +20,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'demo-api-key',
-    appId: '1:000000000000:web:foodhubdemo',
-    messagingSenderId: '000000000000',
-    projectId: 'foodhub-demo',
-    authDomain: 'foodhub-demo.firebaseapp.com',
-    storageBucket: 'foodhub-demo.appspot.com',
+    apiKey: 'AIzaSyDBA6Xi6DDy4-CxiSYwtsc5wREFY1mHXeo',
+    appId: '1:712373546485:web:fb2ae86fd5017ec38384bc',
+    messagingSenderId: '712373546485',
+    projectId: 'foodhub-klv-2026',
+    authDomain: 'foodhub-klv-2026.firebaseapp.com',
+    storageBucket: 'foodhub-klv-2026.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'demo-api-key',
-    appId: '1:000000000000:android:foodhubdemo',
-    messagingSenderId: '000000000000',
-    projectId: 'foodhub-demo',
-    storageBucket: 'foodhub-demo.appspot.com',
+    apiKey: 'AIzaSyDozeHDL_2q8MbEN_0k0gtY-ondk4FlqMs',
+    appId: '1:712373546485:android:f69a79d91ba92c378384bc',
+    messagingSenderId: '712373546485',
+    projectId: 'foodhub-klv-2026',
+    storageBucket: 'foodhub-klv-2026.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(

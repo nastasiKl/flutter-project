@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "712373546485",
+    "project_id": "foodhub-klv-2026",
+    "storage_bucket": "foodhub-klv-2026.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712373546485:android:f69a79d91ba92c378384bc",
+        "android_client_info": {
+          "package_name": "com.example.foodhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDozeHDL_2q8MbEN_0k0gtY-ondk4FlqMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

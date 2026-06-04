@@ -7,6 +7,13 @@ import '../../home/domain/meal_models.dart';
 import '../../home/presentation/home_controller.dart';
 import '../../user_recipes/data/user_data_repository.dart';
 
+final favoriteStatusProvider =
+    FutureProvider.family<bool, ({String userId, String mealId})>((ref, args) {
+      return ref
+          .watch(userDataRepositoryProvider)
+          .isFavorite(args.userId, args.mealId);
+    });
+
 class MealDetailScreen extends ConsumerWidget {
   const MealDetailScreen({required this.id, super.key});
 
@@ -39,6 +46,12 @@ class _MealDetailContent extends ConsumerWidget {
     final l10n = AppLocalizations.of(context);
     final user = ref.watch(authStateProvider).asData?.value;
     final repository = ref.watch(userDataRepositoryProvider);
+    final favoriteArgs = user == null
+        ? null
+        : (userId: user.id, mealId: meal.id);
+    final favoriteStatus = favoriteArgs == null
+        ? null
+        : ref.watch(favoriteStatusProvider(favoriteArgs));
 
     return CustomScrollView(
       slivers: [
@@ -87,23 +100,55 @@ class _MealDetailContent extends ConsumerWidget {
                       ],
                     ),
                   ),
-                  if (user != null)
-                    FutureBuilder<bool>(
-                      future: repository.isFavorite(user.id, meal.id),
-                      builder: (context, snapshot) {
-                        final favorite = snapshot.data ?? false;
-                        return IconButton.filledTonal(
-                          tooltip: favorite
-                              ? l10n.t('removeFromFavorites')
-                              : l10n.t('addToFavorites'),
-                          onPressed: () async {
+                  if (user != null && favoriteArgs != null)
+                    favoriteStatus!.when(
+                      data: (favorite) => IconButton.filledTonal(
+                        tooltip: favorite
+                            ? l10n.t('removeFromFavorites')
+                            : l10n.t('addToFavorites'),
+                        onPressed: () async {
+                          try {
                             await repository.toggleFavorite(user.id, meal);
-                          },
-                          icon: Icon(
-                            favorite ? Icons.favorite : Icons.favorite_border,
-                          ),
-                        );
-                      },
+                            ref.invalidate(
+                              favoriteStatusProvider(favoriteArgs),
+                            );
+                            if (!context.mounted) return;
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  favorite
+                                      ? l10n.t('removeFromFavorites')
+                                      : l10n.t('saved'),
+                                ),
+                              ),
+                            );
+                          } on Object catch (error) {
+                            if (!context.mounted) return;
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('${l10n.t('error')}: $error'),
+                              ),
+                            );
+                          }
+                        },
+                        icon: Icon(
+                          favorite ? Icons.favorite : Icons.favorite_border,
+                        ),
+                      ),
+                      loading: () => const IconButton.filledTonal(
+                        onPressed: null,
+                        icon: SizedBox.square(
+                          dimension: 18,
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        ),
+                      ),
+                      error: (error, stackTrace) => IconButton.filledTonal(
+                        tooltip: error.toString(),
+                        onPressed: () {
+                          ref.invalidate(favoriteStatusProvider(favoriteArgs));
+                        },
+                        icon: const Icon(Icons.error_outline),
+                      ),
                     ),
                 ],
               ),

@@ -1,0 +1,28 @@
+{
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  },
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "foodhub-klv-2026",
+          "appId": "1:712373546485:android:f69a79d91ba92c378384bc",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "foodhub-klv-2026",
+          "configurations": {
+            "android": "1:712373546485:android:f69a79d91ba92c378384bc",
+            "web": "1:712373546485:web:fb2ae86fd5017ec38384bc"
+          }
+        }
+      }
+    }
+  }
+}

@@ -38,9 +38,8 @@ FoodHub is a Flutter recipe discovery app for searching meals with [TheMealDB](h
 ## Run Locally
 
 ```powershell
-cd C:\Users\Lenovo\Documents\Codex\2026-06-03\files-mentioned-by-the-user-individual\outputs\foodhub
-D:\develop\flutter\bin\flutter.bat pub get
-D:\develop\flutter\bin\flutter.bat run
+.\flutter\bin\flutter.bat pub get
+.\flutter\bin\flutter.bat run
 ```
 
 For Android, open an emulator or connect a device before `flutter run`.
@@ -78,8 +77,8 @@ users/{userId}/recipes/{timestamp}_{filename}
 ## Tests
 
 ```powershell
-D:\develop\flutter\bin\flutter.bat analyze
-D:\develop\flutter\bin\flutter.bat test
+.\flutter\bin\flutter.bat analyze
+.\flutter\bin\flutter.bat test
 ```
 
 Current verification:

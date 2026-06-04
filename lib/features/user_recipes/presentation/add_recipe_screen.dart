@@ -232,6 +232,11 @@ class _AddRecipeScreenState extends ConsumerState<AddRecipeScreen> {
         _category = 'Vegetarian';
         _servings.text = '2';
       });
+    } on Object catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text('${l10n.t('error')}: $error')));
     } finally {
       if (mounted) {
         setState(() => _saving = false);
