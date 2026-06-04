@@ -3,10 +3,10 @@
 FoodHub is a Flutter recipe discovery app for searching meals with [TheMealDB](https://www.themealdb.com/api.php), saving favorites, adding personal recipes with photos, and managing language/theme preferences.
 
 ## Screenshots
+<img width="335" height="838" alt="image" src="https://github.com/user-attachments/assets/19d699f2-4609-417d-a878-efb7d3bc4f75" />
 
-![Home screen](docs/screenshots/home.png)
+<img width="324" height="838" alt="image" src="https://github.com/user-attachments/assets/2444e9a5-6fd5-4bbf-b6f8-8baee170eaf0" />
 
-![Recipe details](docs/screenshots/details.png)
 
 ## Implemented Requirements
 
